@@ -29,6 +29,16 @@ def read_json():
             
     except:
         messagebox.showerror('Error','Ensure Data.JSON is in same folder as program')
+        
+def delete_entry():
+    selected_users = list_box_username.curselection()
+    for selected_user in selected_users:
+        list_box_username.delete(selected_user)
+        
+    selected_passes = list_box_pass.curselection()
+    for selected_pass in selected_passes:
+        list_box_pass.delete(selected_pass)
+               
 
 def save_json():
         user_list=[]
@@ -79,5 +89,7 @@ load_data.place(relx=0.2, rely=0.72, anchor='center')
 save_data=tk.Button(root, text='Save Data', command=save_json)
 save_data.place(relx=0.2, rely=0.82, anchor='center')
 
-root.mainloop()
+delete_data=tk.Button(root, text='Delete Selection', command=delete_entry)
+delete_data.place(relx=0.7, rely=0.85, anchor='center')
 
+root.mainloop()
