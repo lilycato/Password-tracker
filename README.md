@@ -3,4 +3,4 @@
 # Instructions:
 Make sure there is a **data.json** file in the same folder as the program. You can also create your own using the "Save Data" button.
 
-The program uses **data.json** to store credentials as a dict.
+The program uses **data.json** to store credentials as a dict as illustrated in the readme image.
