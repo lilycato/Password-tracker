@@ -75,6 +75,12 @@ list_box_username=tk.Listbox(root, font = ('Arial',10,'normal'))
 list_box_username.place(relx=0.6, rely=0.45, anchor='center', height=250, width=100)
 list_box_username.configure(background='skyblue4', foreground='white', font=('Arial', 10))
 
+user_text_label=tk.Label(root, text='Usernames:', font = ('Arial',12,'bold'))
+user_text_label.place(relx=0.6, rely=0.1, anchor='center')
+
+pass_text_label=tk.Label(root, text='Passwords:', font = ('Arial',12,'bold'))
+pass_text_label.place(relx=0.8, rely=0.1, anchor='center')
+
 list_box_pass=tk.Listbox(root, font = ('Arial',10,'normal'))
 list_box_pass.place(relx=0.8, rely=0.45, anchor='center', height=250, width=100)
 list_box_pass.configure(background='skyblue4', foreground='white', font=('Arial', 10))
