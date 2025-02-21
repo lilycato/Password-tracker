@@ -1,7 +1,26 @@
 {
-    "user1": "pass1",
-    "user2": "pass2",
-    "user3": "pass3",
-    "user4": "pass4",
-    "user5": "pass5"
+    "user1": [
+        "pass1",
+        "web1"
+    ],
+    "user2": [
+        "pass2",
+        "web2"
+    ],
+    "user3": [
+        "pass3",
+        "web3"
+    ],
+    "user4": [
+        "pass4",
+        "web4"
+    ],
+    "user5": [
+        "pass5",
+        "web5"
+    ],
+    "user6": [
+        "pass6",
+        "web6"
+    ]
 }
