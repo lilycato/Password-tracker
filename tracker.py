@@ -42,7 +42,7 @@ def delete_entry():
         list_box_pass.delete(selected_pass)
         
     for selected in list_box_web.curselection():
-        list_box_pass.delete(selected)
+        list_box_web.delete(selected)
                
 def save_json():
     user_list=[]
