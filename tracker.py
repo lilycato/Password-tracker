@@ -1,11 +1,15 @@
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
+from tkinter import PhotoImage
 import json
 
 root=tk.Tk()
 root.title('Password Manager')
 root.geometry('600x400')
+
+image=tk.PhotoImage(file='key.png')
+root.iconphoto(True, image)
 
 def insert_in_listbox():
     username=user_entry.get()
@@ -110,7 +114,7 @@ list_box_web.configure(background='skyblue4', foreground='white', font=('Arial',
 submit=tk.Button(root, text='Add Credentials', command=insert_in_listbox)
 submit.place(relx=0.2, rely=0.65, anchor='center')
 
-load_data=tk.Button(root, text='Reload Data', command=read_json)
+load_data=tk.Button(root, text='Load Data', command=read_json)
 load_data.place(relx=0.2, rely=0.75, anchor='center')
 
 save_data=tk.Button(root, text='Save Data', command=save_json)
