@@ -3,6 +3,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 from tkinter import PhotoImage
 import json
+import secrets
 
 root=tk.Tk()
 root.title('Password Manager')
@@ -73,7 +74,10 @@ def save_json():
             messagebox.showinfo('File Saved to:', file_path)
         except Exception as e:
             messagebox.showerror('Error', 'An error has occured while saving.')
-
+            
+def generate_pass():
+    secure_pass=secrets.token_urlsafe(16)
+    pass_text.set(secure_pass)
 
 website_label=tk.Label(root, text='Enter Website:', font = ('Arial',10,'normal'))
 website_label.place(relx=0.2, rely=0.07, anchor='center')
@@ -87,7 +91,8 @@ user_entry.place(relx=0.2, rely=0.33, anchor='center')
 
 pass_label=tk.Label(root, text='Enter Password:', font = ('Arial',10,'normal'))
 pass_label.place(relx=0.2, rely=0.45, anchor='center')
-pass_entry=tk.Entry(root, font = ('Arial',10,'normal'))
+pass_text=tk.StringVar()
+pass_entry=tk.Entry(root, font = ('Arial',10,'normal'), textvariable=pass_text)
 pass_entry.place(relx=0.2, rely=0.53, anchor='center')
 
 list_box_username=tk.Listbox(root, font = ('Arial',10,'normal'))
@@ -122,5 +127,8 @@ save_data.place(relx=0.2, rely=0.85, anchor='center')
 
 delete_data=tk.Button(root, text='Delete Selection', command=delete_entry)
 delete_data.place(relx=0.7, rely=0.85, anchor='center')
+
+generate_pass_button=tk.Button(root, text='Generate Password', command=generate_pass)
+generate_pass_button.place(relx=0.5, rely=0.85, anchor='center')
 
 root.mainloop()
