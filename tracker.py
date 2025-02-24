@@ -13,12 +13,15 @@ image=tk.PhotoImage(file='key.png')
 root.iconphoto(True, image)
 
 def insert_in_listbox():
-    username=user_entry.get()
-    password=pass_entry.get()
-    website=website_entry.get()
-    list_box_web.insert(tk.END, website)
-    list_box_username.insert(tk.END, username)
-    list_box_pass.insert(tk.END, password)
+    if len(user_entry.get())==0 or len(pass_entry.get())==0 or len(pass_entry.get())==0:
+        messagebox.showerror('Error','Field is empty')
+    else:    
+        username=user_entry.get()
+        password=pass_entry.get()
+        website=website_entry.get()
+        list_box_web.insert(tk.END, website)
+        list_box_username.insert(tk.END, username)
+        list_box_pass.insert(tk.END, password)
     
 def read_json():
     try:
