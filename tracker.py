@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
 from tkinter import PhotoImage
-import json
+import json 
 import secrets
 
 root=tk.Tk()
@@ -43,13 +43,9 @@ def read_json():
         messagebox.showerror('Error','Ensure Data.JSON is in same folder as program')
         
 def delete_entry():
-    for selected_user in list_box_username.curselection():
-        list_box_username.delete(selected_user)
-        
-    for selected_pass in list_box_pass.curselection():
-        list_box_pass.delete(selected_pass)
-        
-    for selected in list_box_web.curselection():
+    for selected in list_box_username.curselection():
+        list_box_username.delete(selected)
+        list_box_pass.delete(selected)
         list_box_web.delete(selected)
                
 def save_json():
